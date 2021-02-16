@@ -58,7 +58,7 @@ jobs:
         if: github.ref == 'refs/heads/release'
         uses: mammutmw/usc-gha@v1.1.2
         with:
-           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           cmd: "upload"
           src: "build"
