@@ -1,0 +1,68 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Customer Service Pages CI
+on:
+  push:
+    branches: [develop]
+  #pull_request:
+  #branches: [develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: Dump GitHub context, for debugging
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      # Your stuff
+      - run: yarn install
+
+      # Build the site in the build directory.
+      # build/
+      #     - se/sv/your-project
+      #     - ca/en/your-project
+      #     - ca/fr/your-project
+      - run: yarn run build
+        env:
+          REACT_APP_ACCESS_TOKEN_URL: "Replace this with the api url when deplyed"
+          REACT_APP_CMS_BASE_URL: https://api.ingka.com/content-delivery/onecms
+          SITE_FOLDER: nl/nl/customer-service/contact-us/get-support
+          IS_RELEASE: ${{github.ref == 'refs/heads/release'}}
+
+      - name: List the files in your build, for debugging
+        run: find build -print
+
+        # Deploy contents of build directory to dev
+      - name: Deploy to CTE
+        if: github.ref == 'refs/heads/develop'
+        uses: mammutmw/usc-gha@v1.1.2
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          cmd: "upload"
+          src: "build"
+          target: "https://www.cte.ikeadt.com/nl/nl/customer-service/contact-us/get-support/"
+          info_git: "https://github.com/mammutmw/customer-service-pages-frontend.git"
+          info_slack: ""
+          info_email: "emmanuel.yawson@ingka.com"
+
+        # Deploy contents of build directory prod
+      - name: Deploy to PROD
+        if: github.ref == 'refs/heads/release'
+        uses: mammutmw/usc-gha@v1.1.2
+        with:
+           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          cmd: "upload"
+          src: "build"
+          target: "https://www.cte.ikeadt.com/nl/nl/customer-service/contact-us/get-support/"
+          info_git: "https://github.com/mammutmw/customer-service-pages-frontend.git"
+          info_slack: ""
+          info_email: "emmanuel.yawson@ingka.com"

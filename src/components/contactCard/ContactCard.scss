@@ -1,0 +1,83 @@
+@import "../../index.scss";
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 42px;
+  max-width: 1239px;
+  &__order-number {
+    text-decoration: underline;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  &__right-side {
+    max-width: 504px;
+  }
+  &__title-small {
+    display: none;
+  }
+  &__description {
+    font-size: 16px;
+    line-height: 162.5%;
+    margin-top: 16px;
+    color: #484848;
+  }
+  &__estimated-time {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  &__button {
+    margin-top: 24px;
+  }
+  &__openToday {
+    margin-top: 24px;
+  }
+  &__note {
+    margin-top: 24px;
+    color: #767676;
+  }
+
+  @include mq($until: desktop) {
+    display: grid;
+    grid-template-columns: 100%;
+    min-width: 706px;
+    img {
+      max-width: 469px;
+    }
+    &__right-side {
+      max-width: 467px;
+      margin: 0px;
+    }
+    &__title {
+      display: none;
+    }
+    &__title-small {
+      display: initial;
+    }
+    &__description {
+      font-size: 14px;
+      margin-top: 58px;
+    }
+    &__note {
+      font-size: 12px;
+    }
+  }
+  @include mq($until: tablet) {
+    min-width: 375px;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    &__description {
+      font-size: 14px;
+    }
+  }
+}
+
+.separator {
+  max-width: 1239px;
+  margin-top: 42px;
+  border-bottom: 1px solid rgba(223, 223, 223, 1);
+}

@@ -1,0 +1,30 @@
+//Breakpoints and sass-mq
+@import "../../index.scss";
+
+.headline {
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    max-width: 505px;
+    margin-top: 60px;
+    justify-content: center;
+    &__title {
+        letter-spacing: -0.64px;
+        font-size: 36px;
+        line-height: 48px;
+    }
+    &__description {
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+    @include mq($until: tablet) {
+            margin-top: 40px;
+            width:334px;
+            &__description {
+                min-width: 334px;
+            }
+            &__btn {
+                min-width: 231px;
+        }
+    }
+};

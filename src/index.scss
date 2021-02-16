@@ -1,0 +1,18 @@
+@import 'sass-mq';
+
+//Skapa breakpoints
+$mq-breakpoints: (
+    mobile:  0px,
+    tablet:  600px,
+    desktop: 899px,
+);
+//GLOBAL - Phone only
+.app {
+    @include mq($until: tablet) {
+        h1 {
+            font-size: 25px;
+            letter-spacing: -0.42px;
+            line-height: 136%;
+        }
+    }
+};
