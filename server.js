@@ -15,6 +15,10 @@ app.use(esiMiddleware());
 
 app.use(express.static(path.join(__dirname, "build")));
 app.use("/nl/nl", express.static(path.join(__dirname, "build")));
+app.use(
+  "/nl/nl/customer-service/contact-us/get-support",
+  express.static(path.join(__dirname, "build"))
+);
 
 app.get("*", function (req, res) {
   //res.sendFile(path.join(__dirname, "build", "index.html"));
