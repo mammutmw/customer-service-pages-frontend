@@ -7,6 +7,17 @@ const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 const webpack = require("webpack");
 const dotenv = require("dotenv");
 
+/*
+
+    new CopyPlugin({
+      patterns: [{ from: "public/assets", to: "public/assets", force: true }],
+      options: {
+        concurrency: 100
+      }
+    }),
+ 
+ */
+
 module.exports = {
   entry: ["./src/index.js"],
   output: {
@@ -35,33 +46,17 @@ module.exports = {
       {
         test: /\.svg$/,
         use: ["@svgr/webpack"]
-      },
-      {
-        test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 8192
-            }
-          }
-        ]
       }
     ]
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx", ".scss", ".css", ".svg"]
+    extensions: ["*", ".js", ".jsx", ".scss", ".css"]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html")
     }),
-    new CopyPlugin({
-      patterns: [{ from: "public/assets", to: "public/assets", force: true }],
-      options: {
-        concurrency: 100
-      }
-    }),
+
     new EsiWebpackPlugin({
       onError(src, err) {
         console.error(`Error when resolving ${src}: ${err}`);
