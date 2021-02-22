@@ -36,10 +36,10 @@ const Home = () => {
       />
       <div className="container">
         {topicsData.map((topic) => (
-          <>
+          <div key={topic.id}>
             <Link to={`${ROUTE_GET_HELP}?topic=${topic.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }} >
               {
-                <Topic key={topic.id}
+                <Topic
                   label={topic.topicHeadline}
                   caption={topic.topicBody}
 
@@ -48,7 +48,7 @@ const Home = () => {
 
             </Link>
 
-          </>
+          </div>
         ))}
 
       </div>
