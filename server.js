@@ -2,13 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
-const cors = require('cors');
-
-app.use(cors({
-  origin: "*",
-  optionsSuccessStatus: 200,
-  methods: ["GET"]
-}));
 
 const esiMiddleware = require("nodesi").middleware;
 
@@ -21,7 +14,11 @@ app.engine("html", require("ejs").renderFile);
 app.use(esiMiddleware());
 
 app.use(express.static(path.join(__dirname, "build")));
-app.use("/nl/nl", express.static(path.resolve(__dirname, "build")));
+app.use("/nl/nl", express.static(path.join(__dirname, "build")));
+app.use(
+  "/nl/nl/customer-service/contact-us/get-support",
+  express.static(path.join(__dirname, "build"))
+);
 
 app.get("*", function (req, res) {
   //res.sendFile(path.join(__dirname, "build", "index.html"));

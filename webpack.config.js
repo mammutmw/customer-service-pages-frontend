@@ -22,11 +22,8 @@ module.exports = {
   entry: ["./src/index.js"],
   output: {
     path: path.resolve(__dirname, "build/"),
-    publicPath: '/',
     filename: "bundle.js"
   },
-  //Fixes ERR_UNKNOWN_URL_SCHEME
-  devtool: 'source-map',
   devServer: {
     contentBase: path.resolve(__dirname, "build/"),
     hot: true,
