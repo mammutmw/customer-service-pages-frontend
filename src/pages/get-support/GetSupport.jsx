@@ -11,7 +11,6 @@ import { selectRecomendedTopics } from "./../../store/selectors";
 
 const GetSupport = () => {
   const recomendedTopic = useSelector(selectRecomendedTopics);
-
   const fetchData = {
     recommended: "Recommended",
     chatTitle: "Chat with a Customer Service representative",
@@ -37,11 +36,13 @@ const GetSupport = () => {
         description={recomendedTopic.body}
       />
       {recomendedTopic.contactMethods
-        ? recomendedTopic.contactMethods.map((item) => (
+        ? recomendedTopic.contactMethods.map((item, index) => (
+          <div key={item.id}>
             <ContactCard
-              id={item.id}
               callUsTitle={item.headline}
               callUsDescription={item.body}
+              contactType={item.type}
+              index={index}
               callUsOpenToday={fetchData.callUsOpenToday}
               callUsEstimatedTime={fetchData.chatEstimatedTime}
               callUsNote={fetchData.callUsNote}
@@ -49,6 +50,7 @@ const GetSupport = () => {
               CallUsAvailable={fetchData.CallUsAvailable}
               img= {imgSVG}
             />
+            </div>
           ))
         : ""}
     </Layout>
