@@ -6,10 +6,14 @@ import Layout from "../../components/layout/Layout";
 import BCrumb from "../../components/Bcrumb/BCrumb";
 import Headline from "../../components/headline/Headline";
 import StatusOrder from "../../components/statusOrder/StatusOrder";
+import Topic from "../../components/topic/Topic";
 
 import { selectPages, selectRecomendedTopics } from "./../../store/selectors";
 import { ROUTE_GET_SUPPORT } from "../../constants/routes";
 import { SET_RECOMENDED_TOPICS } from "../../store/actions";
+
+//styles
+import "./GetHelp.scss"
 
 const GetHelp = ({ location }) => {
   const [selectedTopicDetails, setSelectedTopicDetails] = useState({});
@@ -72,18 +76,24 @@ const GetHelp = ({ location }) => {
       <br />
       <br />
       {selectedTopicDetails.topics
-        ? selectedTopicDetails.topics.map((suggestedTopic) => (
-            <div key={suggestedTopic.id}>
-              <h4>
-                <Link
-                  to={`${ROUTE_GET_SUPPORT}?suggestedTopic=${suggestedTopic.id}`}
-                >
-                  {suggestedTopic.topicHeadline}{" "}
+        ? <div className="container">
+          {
+            selectedTopicDetails.topics.map((suggestedTopic) => (
+              <div key={suggestedTopic.id}>
+
+                <Link to={`${ROUTE_GET_SUPPORT}?suggestedTopic=${suggestedTopic.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }} >
+                  {
+                    <Topic
+                      label={suggestedTopic.topicHeadline}
+                      caption={suggestedTopic.topicBody}
+
+                    />
+                  }
                 </Link>
-              </h4>
-              <p>{suggestedTopic.topicBody}</p>
-            </div>
-          ))
+              </div>
+            ))
+          }
+        </div>
         : ""}
     </Layout>
   );

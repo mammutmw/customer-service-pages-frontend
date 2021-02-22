@@ -14,14 +14,14 @@ import ActionList, { ActionListItem } from '@ingka/action-list';
 
 function Topic({ label, caption }) {
     return (
-            <ActionList id="table" className="item1">
-                <ActionListItem
-                    variation="navigational"
-                    label={label}
-                    caption={caption}
-                    className="item2"
-                />
-            </ActionList>
+        <ActionList id="table" className="item1">
+            <ActionListItem
+                variation="navigational"
+                label={label}
+                caption={caption}
+                className="item2"
+            />
+        </ActionList>
     )
 }
 
