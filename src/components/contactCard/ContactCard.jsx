@@ -21,7 +21,7 @@ function ContactCad({
 }) {
   return (
     
-    <Fragment key={id}>
+    <Fragment>
       <div className="card">
         {/* h2 for tablet and mobile */}
         <h2 className="card__title-small">{callUsTitle}</h2>
