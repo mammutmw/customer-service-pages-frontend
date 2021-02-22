@@ -8,7 +8,6 @@ import "@ingka/focus/style.scss";
 import Button from "@ingka/button";
 
 function ContactCad({
-  id,
   callUsTitle,
   callUsDescription,
   callUsEstimatedTime,
@@ -19,7 +18,7 @@ function ContactCad({
   img
 }) {
   return (
-    <Fragment key={id}>
+    <Fragment>
       <div className="card">
         {/* h2 for tablet and mobile */}
         <h2 className="card__title-small">{callUsTitle}</h2>
