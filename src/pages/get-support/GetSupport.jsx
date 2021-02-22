@@ -5,6 +5,7 @@ import Layout from "../../components/layout/Layout";
 import BCrumb from "../../components/Bcrumb/BCrumb";
 import Headline from "../../components/headline/Headline";
 import ContactCard from "../../components/contactCard/ContactCard";
+import imgSVG from "../../../public/assets/img/rectangle.svg"
 
 import { selectRecomendedTopics } from "./../../store/selectors";
 
@@ -46,6 +47,7 @@ const GetSupport = () => {
               callUsNote={fetchData.callUsNote}
               orderNumber={fetchData.orderNumber}
               CallUsAvailable={fetchData.CallUsAvailable}
+              img= {imgSVG}
             />
           ))
         : ""}

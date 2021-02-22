@@ -1,6 +1,4 @@
 import React, { Fragment } from "react";
-//import rectangle from "/public/assets/img/Rectangle-276.png";
-//import { rectangle } from "./rectagle.svg";
 import "./ContactCard.scss";
 
 //Button
@@ -17,15 +15,15 @@ function ContactCad({
   CallUsAvailable,
   orderNumber,
   callUsOpenToday,
-  callUsNote
+  callUsNote,
+  img
 }) {
   return (
     <Fragment key={id}>
       <div className="card">
         {/* h2 for tablet and mobile */}
         <h2 className="card__title-small">{callUsTitle}</h2>
-        <img src={""} alt="img" />
-        {/*  <RectangleImg /> */}
+        <img src={img} alt="img" />
 
         <div className="card__right-side">
           {/* h2 for desktop */}
