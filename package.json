@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ingka/action-list": "^0.2.0",
     "@ingka/base": "^2.0.6",
     "@ingka/breadcrumb": "^2.0.15",
     "@ingka/button": "^4.0.6",

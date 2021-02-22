@@ -1,0 +1,11 @@
+@import "../../index.scss";
+
+.item2 {
+    @include mq($until: 1350px) {   
+    }
+    @include mq($until: 1050px) {     
+
+    }
+    @include mq(tablet, desktop) {
+    }
+}

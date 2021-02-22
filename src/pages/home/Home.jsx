@@ -7,34 +7,54 @@ import Headline from "../../components/headline/Headline";
 import BCrumb from "../../components/Bcrumb/BCrumb";
 import { selectPages } from "../../store/selectors";
 import { ROUTE_GET_HELP } from "../../constants/routes";
+import Topic from "../../components/topic/Topic";
+
+//styles
+import "./Home.scss"
+
 const Home = () => {
+  //raw data - Need to remove headline data
   const pages = useSelector(selectPages);
+
+  //Just "headline" data
+  const headlineData = pages.filter(element => element.id === "2vO2HX5P3SmKPBXyhBuOCl")
+  //Discarding "headline" and "Other"
+  const topicsData = pages.filter(element => element.id !== "2vO2HX5P3SmKPBXyhBuOCl" && element.headline !== "Other")
+ //just "Other" card
+  const lastItem = pages.filter(element => element.headline === "Other")
+  //Pushing the "Other" card at the end
+  topicsData.push(...lastItem)
+
   return (
+
     <Layout>
       <BCrumb />
 
       <Headline
-        title="We are here to help"
-        description="Choose a topic and we'll find you the best solution. Connect by phone, chat, email, and more."
+        title={headlineData[0].headline}
+        description={headlineData[0].body}
       />
+      <div className="container">
+        {topicsData.map((topic) => (
+          <>
+            <Link to={`${ROUTE_GET_HELP}?topic=${topic.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }} >
+              {
+                <Topic key={topic.id}
+                  label={topic.topicHeadline}
+                  caption={topic.topicBody}
 
-      {pages.map((topic) => (
-        <div key={topic.id}>
-          <h4>
-            <Link to={`${ROUTE_GET_HELP}?topic=${topic.id}`}>
-              {topic.topicHeadline}
+                />
+              }
+
             </Link>
-          </h4>
-          <p>{topic.topicBody}</p>
-        </div>
-      ))}
 
+          </>
+        ))}
+
+      </div>
       <br />
       <br />
       <br />
-      <a href="/nl/nl/customer-service/contact-us/get-help">
-        <p>Contact us component</p>
-      </a>
     </Layout>
   );
 };

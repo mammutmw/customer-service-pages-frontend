@@ -1,0 +1,19 @@
+@import "../../index.scss";
+
+// container for the topic
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+    max-width: 1440px;
+    @include mq($until: 1350px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include mq($until: 1050px) {
+        column-gap: 22px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include mq($until: 650px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

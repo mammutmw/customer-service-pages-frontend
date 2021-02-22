@@ -1998,10 +1998,32 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@ingka/action-list@^0.2.0":
+  version "0.2.0"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2faction-list/-/action-list-0.2.0.tgz#46b42781cb0f986202dc8832976d1a6e6499cc17"
+  integrity sha512-3TAl3RV/JunSM8UtgAizwxlMMzSeWCrl4uu9v86Zuo7EplXYfC2cP8WIsdTH6+DH1wdTRXHWRIsoBJyfir+Mgw==
+  dependencies:
+    "@ingka/aspect-ratio-image" "^3.2.0"
+    "@ingka/checkbox" "^4.1.0"
+    "@ingka/forms" "^4.0.12"
+    "@ingka/radio-button" "^5.1.0"
+    "@ingka/ssr-icon" "^2.6.0"
+    "@ingka/switch" "^0.3.13"
+    "@ingka/variables" "^2.2.1"
+    classnames "^2.2.5"
+    prop-types "^15.7.2"
+
 "@ingka/animations@^2.0.7":
   version "2.0.7"
   resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fanimations/-/animations-2.0.7.tgz#31e76fa3d965d3f3c81346aa4185a7e73bdbb8b6"
   integrity sha512-L/XXac1fCzxmY8g4ma71qy9mq4WWB+GbYHbzIMKoZP4BC9uzp1TXgPR8Q3vde3QcrPAsY4nhqVVjh90PFKIfuA==
+  dependencies:
+    "@ingka/variables" "^2.2.1"
+
+"@ingka/animations@^2.0.8":
+  version "2.0.8"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fanimations/-/animations-2.0.8.tgz#7c6340b0a846b72d7394e17e6cdc990a2cd39e66"
+  integrity sha512-joDLOc5BY9gulKUeBGEYFUIF0AejRvBUV708U7qJzzY4iHR/U//5Xeo+pSwMvAFXYnZJFmoJN9zV+FDsNeXPvA==
   dependencies:
     "@ingka/variables" "^2.2.1"
 
@@ -2012,6 +2034,19 @@
   dependencies:
     "@ingka/image-info" "^2.0.14"
     "@ingka/ssr-icon" "^2.5.1"
+    "@ingka/variables" "^2.2.1"
+    classnames "^2.2.5"
+    object-fit-images "^3.2.4"
+    picturefill "^3.0.3"
+    prop-types "^15.7.2"
+
+"@ingka/aspect-ratio-image@^3.2.0":
+  version "3.2.0"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2faspect-ratio-image/-/aspect-ratio-image-3.2.0.tgz#e6e3cfd8749e264f5640725f6a1cc65d3d66176b"
+  integrity sha512-WwqlQHD59LeadrcCs/AI030qvny7N9er+eJCpSIV/UMZpn+F+deYwh8proO2pSqYR7r08rEHZ8EewY7ZzbLz1Q==
+  dependencies:
+    "@ingka/image-info" "^2.1.0"
+    "@ingka/ssr-icon" "^2.6.0"
     "@ingka/variables" "^2.2.1"
     classnames "^2.2.5"
     object-fit-images "^3.2.4"
@@ -2050,6 +2085,20 @@
     classnames "^2.2.5"
     prop-types "^15.7.2"
 
+"@ingka/checkbox@^4.1.0":
+  version "4.1.0"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fcheckbox/-/checkbox-4.1.0.tgz#9dffcc93610c0fea107dd28c353e015da889dc1c"
+  integrity sha512-V/Tx9qRJ9H1OYZZHEeSpr9KhQItq57twhew+cQqexJ2VxjCCD/torXsoJWyr1Kf5ZtzfCPFJ78S4yyEwF8OJyA==
+  dependencies:
+    "@ingka/focus" "^2.1.5"
+    "@ingka/forms" "^4.0.12"
+    "@ingka/hyperlink" "^3.0.0"
+    "@ingka/label" "^3.0.14"
+    "@ingka/ssr-icon" "^2.6.0"
+    "@ingka/svg-icon" "^2.0.8"
+    classnames "^2.2.5"
+    prop-types "^15.7.2"
+
 "@ingka/choice@^0.7.19":
   version "0.7.19"
   resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fchoice/-/choice-0.7.19.tgz#7cc58952b0af3b9a4c3f4c167bdc4a81c226d595"
@@ -2080,6 +2129,23 @@
     "@ingka/variables" "^2.2.1"
     focus-visible "^4.1.5"
 
+"@ingka/focus@^2.1.5":
+  version "2.1.5"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2ffocus/-/focus-2.1.5.tgz#5120a11d3b289404134eeec56284519a4568cba7"
+  integrity sha512-VaeejO72veE+3BmhkWv/R3TNGK0BSoNIX6xGsYYRXbJf1UIHtUuM6JUalKX6Gz6MH8xf/Nzi6ZJQ1mWTp5bHMQ==
+  dependencies:
+    "@ingka/animations" "^2.0.8"
+    "@ingka/variables" "^2.2.1"
+    focus-visible "^4.1.5"
+
+"@ingka/forms@^4.0.12":
+  version "4.0.12"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fforms/-/forms-4.0.12.tgz#d99be733182a2f3dd9efac03c44e6d78d8156db8"
+  integrity sha512-l+oIxA79eX8yEHjs8ia32YWIFYKou1qsETWvludoQa9KKTYdvKY6kyG6FnBv5dt+oBjwZn4e+h2EESXP7m4Gbw==
+  dependencies:
+    "@ingka/animations" "^2.0.8"
+    "@ingka/variables" "^2.2.1"
+
 "@ingka/hyperlink@^2.0.15":
   version "2.0.15"
   resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fhyperlink/-/hyperlink-2.0.15.tgz#3218a8245e3a4261f6f04190e502ac79fa0bad20"
@@ -2089,6 +2155,16 @@
     "@ingka/icon" "^2.0.8"
     "@ingka/ssr-icon" "^2.5.1"
     "@ingka/svg-icon" "^2.0.7"
+    "@ingka/variables" "^2.2.1"
+    classnames "^2.2.5"
+    prop-types "^15.7.2"
+
+"@ingka/hyperlink@^3.0.0":
+  version "3.0.0"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fhyperlink/-/hyperlink-3.0.0.tgz#7b85eba596ea19a126823790be0476cd2cad9198"
+  integrity sha512-VescVnxwmWzP9bmfyqCTi27dCcFWR2lDAKcAhcFptgnMfWoNEVgeSyk2xOmVQLzjH/T+uKKuougH8D+upxR9Kg==
+  dependencies:
+    "@ingka/focus" "^2.1.5"
     "@ingka/variables" "^2.2.1"
     classnames "^2.2.5"
     prop-types "^15.7.2"
@@ -2113,12 +2189,44 @@
     classnames "^2.2.5"
     prop-types "^15.7.2"
 
+"@ingka/image-info@^2.1.0":
+  version "2.1.0"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fimage-info/-/image-info-2.1.0.tgz#d4cb995a6431974df69feeea9e378d9cbc801296"
+  integrity sha512-qiIfFP2y4wRm84PxUBC6SAWtmfb+tLn7R3zjPrQEm4u+ImCdKLVfG3Y8TtruRpZ/+XJHczQFtAxkSN689CxeEg==
+  dependencies:
+    "@ingka/ssr-icon" "^2.6.0"
+    "@ingka/svg-icon" "^2.0.8"
+    "@ingka/variables" "^2.2.1"
+    classnames "^2.2.5"
+    prop-types "^15.7.2"
+
+"@ingka/label@^3.0.14":
+  version "3.0.14"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2flabel/-/label-3.0.14.tgz#45adbb327fd6e29224dfdfd27275244eecd9f3b9"
+  integrity sha512-w6n52h/u01zjglvBFXtN9qVmWG9x03PldjRPCYLppW1iMWua4d0x1RvP8kCUoyFVGxtHg0lQfMNeC9noQcW7JA==
+  dependencies:
+    "@ingka/forms" "^4.0.12"
+    classnames "^2.2.5"
+    prop-types "^15.7.2"
+
 "@ingka/page-container@^2.0.6":
   version "2.0.6"
   resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fpage-container/-/page-container-2.0.6.tgz#2f3e2be9adb1679702a278131be79fe9dd0a7f43"
   integrity sha512-3NbngmcXANNpSXvZAWQkbsYZ7iBHK+asbd6X+5w3FXZWD+LSmGq5LK7ro9CLiMus0XK9sEEpg9UpGHwSVCTpxw==
   dependencies:
     "@ingka/variables" "^2.2.1"
+
+"@ingka/radio-button@^5.1.0":
+  version "5.1.0"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fradio-button/-/radio-button-5.1.0.tgz#e99977e3cf08e1ed97b0f804de884fa76cc65b17"
+  integrity sha512-RY29aRTrlNtf9Vb0pzzs9LOFQsOmApXzT0scMP59oaft+adk9I7M9Uq5YxiELLBaZaIswSsFSlJvreecZPqXpw==
+  dependencies:
+    "@ingka/focus" "^2.1.5"
+    "@ingka/forms" "^4.0.12"
+    "@ingka/hyperlink" "^3.0.0"
+    "@ingka/label" "^3.0.14"
+    classnames "^2.2.5"
+    prop-types "^15.7.2"
 
 "@ingka/ssr-icon@^2.5.1":
   version "2.5.1"
@@ -2129,12 +2237,42 @@
     classnames "^2.2.5"
     prop-types "^15.7.2"
 
+"@ingka/ssr-icon@^2.6.0":
+  version "2.6.0"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fssr-icon/-/ssr-icon-2.6.0.tgz#7cb1cd333252433c315ba0272dee00782b87875c"
+  integrity sha512-odTFGta9DiZd6l4WVomiPxjJPGW3OnRqflgHjPsVDDHzKo+na/tHz+Fi2h9XrQJhDos6xvRqYbw+jBMDgTU8Wg==
+  dependencies:
+    "@ingka/svg-icon" "^2.0.8"
+    classnames "^2.2.5"
+    prop-types "^15.7.2"
+
 "@ingka/svg-icon@^2.0.7":
   version "2.0.7"
   resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fsvg-icon/-/svg-icon-2.0.7.tgz#d5e690b567195593c4ffff2c19bb1d99f74c95c7"
   integrity sha512-XfRCYDDjHpsM4YAiUwfKnhu+o/NRUWskg9aa5oVlrPjwcfFWilkYT4N6yKx6ThJqqr0tdCqyHJxBx0swAmvGsQ==
   dependencies:
     "@ingka/animations" "^2.0.7"
+    "@ingka/variables" "^2.2.1"
+    classnames "^2.2.5"
+    prop-types "^15.7.2"
+
+"@ingka/svg-icon@^2.0.8":
+  version "2.0.8"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fsvg-icon/-/svg-icon-2.0.8.tgz#735b7313fe8e72782b77c599726f366dda175752"
+  integrity sha512-fjArnh6/DbsT+MNBjbUzQmw9Onj5tyXPTVSPlyc/lTw55JtdEgbNLc/DMgXphlgXv5jOJ1O0pCZqS93V1lbFDQ==
+  dependencies:
+    "@ingka/animations" "^2.0.8"
+    "@ingka/variables" "^2.2.1"
+    classnames "^2.2.5"
+    prop-types "^15.7.2"
+
+"@ingka/switch@^0.3.13":
+  version "0.3.13"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fswitch/-/switch-0.3.13.tgz#9b394dc208f6565da4e4d18400591ec63d6ebd5b"
+  integrity sha512-AlY89ACBYl4DwStBrGfuE+Z9NHv5IiQLHBxxiBKwwQCHC4Ki3uYXn3Sl9C2fbetgE/g9C5+3+LmIXMCpPPnhew==
+  dependencies:
+    "@ingka/animations" "^2.0.8"
+    "@ingka/focus" "^2.1.5"
     "@ingka/variables" "^2.2.1"
     classnames "^2.2.5"
     prop-types "^15.7.2"
