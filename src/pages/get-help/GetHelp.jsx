@@ -25,7 +25,6 @@ const GetHelp = ({ location }) => {
     title: "Get help with Services & delivery",
     description:
       "Choose a topic and we’ll find you the best solution. Connect by phone, chat, email, and more.",
-    recommended: "Recommended",
     heading: "The status of your order directly on IKEA",
     orderDescription:
       "Did you know you can track your order status directly on IKEA web? Depending on the status of your order you can change delivery date, add services or cancel order."
@@ -58,7 +57,6 @@ const GetHelp = ({ location }) => {
       setSelectedTopicDetails(recomendedTopics);
     }
   }, [selectedTopicDetails, location.search]); // eslint-disable-line react-hooks/exhaustive-deps
-
   return (
     <Layout>
       <BCrumb />
@@ -67,7 +65,6 @@ const GetHelp = ({ location }) => {
         description={selectedTopicDetails.body}
       />
       <StatusOrder
-        recommended={fetchData.recommended}
         heading={fetchData.heading}
         orderDescription={fetchData.orderDescription}
       />

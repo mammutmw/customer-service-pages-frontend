@@ -12,7 +12,7 @@ import "@ingka/forms/style.scss";
 import ActionList, { ActionListItem } from '@ingka/action-list';
 
 
-function Topic({ label, caption }) {
+const Topic = ({ label, caption }) => {
     return (
         <ActionList id="table" className="item1">
             <ActionListItem

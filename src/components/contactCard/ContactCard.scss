@@ -18,6 +18,9 @@
   &__title-small {
     display: none;
   }
+  &__label-small {
+    display: none;
+  }
   &__description {
     font-size: 16px;
     line-height: 162.5%;
@@ -45,6 +48,7 @@
     min-width: 706px;
     img {
       max-width: 469px;
+      margin-top: 24px;
     }
     &__right-side {
       max-width: 467px;
@@ -54,11 +58,17 @@
       display: none;
     }
     &__title-small {
+      font-size: 25px;
       display: initial;
+    }
+    &__label-small {
+      display: initial;
+    }
+    &__label {
+      display: none;
     }
     &__description {
       font-size: 14px;
-      margin-top: 58px;
     }
     &__note {
       font-size: 12px;
@@ -69,6 +79,7 @@
     img {
       max-width: 100%;
       height: auto;
+      margin-top: 8px;
     }
     &__description {
       font-size: 14px;

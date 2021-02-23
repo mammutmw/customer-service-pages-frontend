@@ -6,8 +6,9 @@ import "@ingka/svg-icon/style.scss";
 import "@ingka/button/style.scss";
 import "@ingka/focus/style.scss";
 import Button from "@ingka/button";
+import Recommended from "../recommended/Recommended";
 
-function ContactCad({
+function ContactCard({
   callUsTitle,
   callUsDescription,
   callUsEstimatedTime,
@@ -22,11 +23,19 @@ function ContactCad({
   return (
     <Fragment>
       <div className="card">
+        {/* Recommended label on tablet and mobile */}
+        <div className="card__label-small">
+          {index === 0 && <Recommended />}
+        </div>
         {/* h2 for tablet and mobile */}
         <h2 className="card__title-small">{callUsTitle}</h2>
         <img src={img} alt="img" />
 
         <div className="card__right-side">
+          {/* Recommended label on Desktop */}
+          <div className="card__label">
+            {index === 0 && <Recommended />}
+          </div>
           {/* h2 for desktop */}
           <h2 className="card__title">{callUsTitle}</h2>
           <p className="card__description">
@@ -36,13 +45,13 @@ function ContactCad({
           </p>
           <p className="card__estimated-time">{callUsEstimatedTime}</p>
           {index === 0 ?
-              <Button className="card__button" type="primary">
-                {contactType}
-              </Button> :
-              <Button className="card__button" type="secondary">
-                {contactType}
-              </Button>
-         }
+            <Button className="card__button" type="primary">
+              {contactType}
+            </Button> :
+            <Button className="card__button" type="secondary">
+              {contactType}
+            </Button>
+          }
 
           <p className="card__openToday">{callUsOpenToday}</p>
           <p className="card__note">{callUsNote}</p>
@@ -53,4 +62,4 @@ function ContactCad({
   );
 }
 
-export default ContactCad;
+export default ContactCard;
