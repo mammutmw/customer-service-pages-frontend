@@ -8,7 +8,7 @@ import "@ingka/focus/style.scss";
 import Button from "@ingka/button";
 import Recommended from "../recommended/Recommended";
 
-function ContactCard({
+const ContactCard = ({
   callUsTitle,
   callUsDescription,
   callUsEstimatedTime,
@@ -18,8 +18,13 @@ function ContactCard({
   callUsNote,
   img,
   contactType,
-  index
-}) {
+  index,
+  callUsTitle2, //DummyData
+  callUsTitle1, //DummyData
+  callUsDescriptionA, //DummyData
+  callUsDescriptionB, //DummyData
+  callUsDescriptionC //DummyData
+}) => {
   return (
     <Fragment>
       <div className="card">
@@ -30,7 +35,12 @@ function ContactCard({
         {/* h2 for tablet and mobile */}
         <h2 className="card__title-small">{callUsTitle}</h2>
         <img src={img} alt="img" />
-
+        {/* ContactCardExtra TITLE for Mobile */}
+        {typeof(index) !== "number" &&
+          <>
+            <h2 className="card__title-small">{callUsTitle1}</h2>
+          </>
+        }
         <div className="card__right-side">
           {/* Recommended label on Desktop */}
           <div className="card__label">
@@ -38,6 +48,31 @@ function ContactCard({
           </div>
           {/* h2 for desktop */}
           <h2 className="card__title">{callUsTitle}</h2>
+          {/* ContactCardExtra TITLE and Descriptions for Desktop */}
+          {typeof (index) !== "number" &&
+            <>
+              <h2 className="card__title">{callUsTitle1}</h2>
+              <p className="card__description">{`${callUsDescriptionA}`}{" "}</p>
+              <p className="card__description">{`${callUsDescriptionB}`}{" "}</p>
+              <p className="card__description">{`${callUsDescriptionC}`}{" "}</p>
+            </>
+          }
+          {/* ContactCardExtra TITLE2 for Desktop */}
+
+          {
+            typeof (index) !== "number" &&
+            <>
+              <h2 className="card__title">{callUsTitle2}</h2>
+            </>
+          }
+          {/* ContactCardExtra TITLE2 for Mobile */}
+
+          {typeof (index) !== "number" &&
+            <>
+              <h2 className="card__title-small">{callUsTitle2}</h2>
+            </>
+          }
+
           <p className="card__description">
             {`${callUsDescription}`}{" "}
             <span className="card__order-number">{orderNumber}</span>{" "}

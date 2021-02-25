@@ -1,0 +1,16 @@
+//Base styles (we add .extra-styles on top of this)
+@import "../contactCard/ContactCard.scss";
+
+.extra-styles {
+    .card {
+        img {
+            order: 1;
+        }
+        &__right-side {
+            order: 0;
+        }
+        &__button {
+            display: none;
+        }
+    }
+};

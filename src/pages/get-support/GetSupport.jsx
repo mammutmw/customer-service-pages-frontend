@@ -8,6 +8,7 @@ import ContactCard from "../../components/contactCard/ContactCard";
 import imgSVG from "../../../public/assets/img/rectangle.svg"
 
 import { selectRecomendedTopics } from "./../../store/selectors";
+import ContactCardExtra from "../../components/contactCardExtra/ContactCardExtra";
 
 const GetSupport = () => {
   const recomendedTopic = useSelector(selectRecomendedTopics);
@@ -30,11 +31,13 @@ const GetSupport = () => {
   return (
     <Layout>
       <BCrumb />
-
       <Headline
         title={recomendedTopic.headline}
         description={recomendedTopic.body}
       />
+      {/* Additional information on top of contact cards */}
+      <ContactCardExtra />
+
       {recomendedTopic.contactMethods
         ? recomendedTopic.contactMethods.map((item, index) => (
           <div key={item.id}>
@@ -48,10 +51,10 @@ const GetSupport = () => {
               callUsNote={fetchData.callUsNote}
               orderNumber={fetchData.orderNumber}
               CallUsAvailable={fetchData.CallUsAvailable}
-              img= {imgSVG}
+              img={imgSVG}
             />
-            </div>
-          ))
+          </div>
+        ))
         : ""}
     </Layout>
   );
