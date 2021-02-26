@@ -73,7 +73,7 @@ const GetHelp = ({ location }) => {
       <br />
       <br />
       {selectedTopicDetails.topics
-        ? <div className="container">
+        ? <div className="topics-container">
           {
             selectedTopicDetails.topics.map((suggestedTopic) => (
               <div key={suggestedTopic.id}>

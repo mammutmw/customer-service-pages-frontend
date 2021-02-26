@@ -1,7 +1,6 @@
 @import "../../index.scss";
 
-// container for the topic
-.container {
+.topics-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 30px;
@@ -16,4 +15,4 @@
     @include mq($until: 650px) {
         grid-template-columns: repeat(1, 1fr);
     }
-}
+};
