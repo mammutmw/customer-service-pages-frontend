@@ -9,7 +9,9 @@
         &__right-side {
             order: 0;
         }
-        &__button {
+        // For the moment let's hide buttons
+        // This needs a better logic when we have the CMS data
+        &__button-desktablet, &__button-mobile {
             display: none;
         }
     }

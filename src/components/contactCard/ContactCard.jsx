@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "./ContactCard.scss";
 
 //Button
@@ -25,6 +25,8 @@ const ContactCard = ({
   callUsDescriptionB, //DummyData
   callUsDescriptionC //DummyData
 }) => {
+  // Hooks
+  const [showNumber, setShowNumber] = useState("Show phone number");
   return (
     <Fragment>
       <div className="card">
@@ -36,7 +38,7 @@ const ContactCard = ({
         <h2 className="card__title-small">{callUsTitle}</h2>
         <img src={img} alt="img" />
         {/* ContactCardExtra TITLE for Mobile */}
-        {typeof(index) !== "number" &&
+        {typeof (index) !== "number" &&
           <>
             <h2 className="card__title-small">{callUsTitle1}</h2>
           </>
@@ -79,12 +81,24 @@ const ContactCard = ({
             {`${CallUsAvailable}`}
           </p>
           <p className="card__estimated-time">{callUsEstimatedTime}</p>
+          {/* Button for Desktop and Tablet */}
           {index === 0 ?
-            <Button className="card__button" type="primary">
-              {contactType}
+            <Button className="card__button-desktablet" type="primary" onClick={() => setShowNumber("1-800-555-444")} >
+              {contactType === "telephone" ? <a href={`tel:${showNumber}`} style={{textDecoration: "none"}}>{showNumber}</a> : contactType}
             </Button> :
-            <Button className="card__button" type="secondary">
-              {contactType}
+            <Button className="card__button-desktablet" type="secondary" onClick={() => setShowNumber("1-800-555-444")} >
+              {contactType === "telephone" ? <a href={`tel:${showNumber}`} style={{textDecoration: "none"}}>{showNumber}</a> : contactType}
+            </Button>
+          }
+          {/* Button for Mobile */}
+          {index === 0 ?
+            <Button className="card__button-mobile" type="primary">
+              {/* Right now phone number 1-800-555-444 is DUMMY data */}
+              {contactType === "telephone" ? <a href="tel:1-800-555-444" style={{textDecoration: "none"}}>1-800-555-444</a> : contactType}
+            </Button> :
+            <Button className="card__button-mobile" type="secondary">
+              {/* Right now phone number 1-800-555-444 is DUMMY data */}
+              {contactType === "telephone" ? <a href="tel:1-800-555-444" style={{textDecoration: "none"}}>1-800-555-444</a>  : contactType}
             </Button>
           }
 

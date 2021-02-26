@@ -57,6 +57,7 @@ const GetHelp = ({ location }) => {
       setSelectedTopicDetails(recomendedTopics);
     }
   }, [selectedTopicDetails, location.search]); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <Layout>
       <BCrumb />

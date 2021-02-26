@@ -31,8 +31,11 @@
     font-size: 14px;
     margin-top: 16px;
   }
-  &__button {
+  &__button-desktablet, &__button-mobile {
     margin-top: 24px;
+  }
+  &__button-mobile {
+    display: none;
   }
   &__openToday {
     margin-top: 24px;
@@ -49,6 +52,12 @@
     img {
       max-width: 469px;
       margin-top: 24px;
+    }
+    &__button-desktablet {
+      display: none;
+    }
+    &__button-mobile {
+      display: initial;
     }
     &__right-side {
       max-width: 467px;
