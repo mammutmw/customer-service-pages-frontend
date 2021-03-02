@@ -1,5 +1,5 @@
 // Market route
-export const ROUTE_BASE = "/nl/nl/customer-service/contact-us/get-support";
+export const ROUTE_BASE = "/nl/nl/customer-service/support";
 
 // Basic
 export const ROUTE_HOME = `${ROUTE_BASE}/`;

@@ -10,3 +10,6 @@ export const FETCH_CMS_TOPICS_ERROR = "FETCH_CMS_TOPICS_ERROR";
 
 // Topics manipulation
 export const SET_RECOMENDED_TOPICS = "SET_RECOMENDED_TOPICS";
+
+// Loading
+export const LOADING_PAGES = "LOADING_PAGES";

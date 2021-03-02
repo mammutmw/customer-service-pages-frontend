@@ -31,8 +31,7 @@ jobs:
       #     - ca/fr/your-project
       - run: yarn run build
         env:
-          REACT_APP_ACCESS_TOKEN_URL: "Replace this with the api url when deplyed"
-          REACT_APP_CMS_BASE_URL: https://api.ingka.com/content-delivery/onecms
+          REACT_APP_CMS_DATA: "Replace this with the api url when deplyed"
           SITE_FOLDER: nl/nl/customer-service/contact-us/get-support
           IS_RELEASE: ${{github.ref == 'refs/heads/release'}}
 
@@ -48,7 +47,7 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           cmd: "upload"
           src: "build"
-          target: "https://www.cte.ikeadt.com/nl/nl/customer-service/contact-us/get-support/"
+          target: "https://www.cte.ikeadt.com/nl/nl/customer-service/support/"
           info_git: "https://github.com/mammutmw/customer-service-pages-frontend.git"
           info_slack: ""
           info_email: "emmanuel.yawson@ingka.com"
@@ -62,7 +61,7 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           cmd: "upload"
           src: "build"
-          target: "https://www.cte.ikeadt.com/nl/nl/customer-service/contact-us/get-support/"
+          target: "https://www.cte.ikeadt.com/nl/nl/customer-service/support/"
           info_git: "https://github.com/mammutmw/customer-service-pages-frontend.git"
           info_slack: ""
           info_email: "emmanuel.yawson@ingka.com"

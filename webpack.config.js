@@ -7,23 +7,14 @@ const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 const webpack = require("webpack");
 const dotenv = require("dotenv");
 
-/*
-
-    new CopyPlugin({
-      patterns: [{ from: "public/assets", to: "public/assets", force: true }],
-      options: {
-        concurrency: 100
-      }
-    }),
- 
- */
-
 module.exports = {
   entry: ["./src/index.js"],
   output: {
     path: path.resolve(__dirname, "build/"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: ""
   },
+  devtool: "source-map",
   devServer: {
     contentBase: path.resolve(__dirname, "build/"),
     hot: true,
@@ -49,8 +40,8 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        use: ['file-loader'],
-      },
+        use: ["file-loader"]
+      }
     ]
   },
   resolve: {

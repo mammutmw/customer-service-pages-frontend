@@ -8,14 +8,9 @@ export const getAuthToken = async () => {
 };
 
 // Fetch topics from cms
-export const getPages = async (authToken) => {
-  const env = process.env.REACT_APP_CMS_ENV;
-  const market = process.env.REACT_APP_CMS_MARKET;
-  const url =
-    process.env.REACT_APP_CMS_BASE_URL +
-    `/entries?contentType=customerServicePage&market=${market}&environment=${env}`;
+export const getPages = async ({ market, environment }) => {
+  const url = process.env.REACT_APP_CMS_DATA;
   return await axios.get(url, {
-    params: {},
-    headers: { Authorization: "Bearer " + authToken }
+    params: { market, environment }
   });
 };

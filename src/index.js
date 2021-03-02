@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import { PersistGate } from "redux-persist/integration/react";
+import { LOADING_PAGES } from "../src/store/actions";
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -11,13 +12,14 @@ import reportWebVitals from "./reportWebVitals";
 import { store, history, persistor } from "./store";
 
 // Action constants
-import { FETCH_AUTH_TOKEN_REQUEST } from "./../src/store/actions";
+import { FETCH_CMS_TOPICS_REQUEST } from "./../src/store/actions";
 
 const onBeforeLift = () => {
   // This is where we call functions:
   //  => that run on application start
   //  => that run in the background
-  store.dispatch({ type: FETCH_AUTH_TOKEN_REQUEST });
+  store.dispatch({ type: LOADING_PAGES, payload: true });
+  store.dispatch({ type: FETCH_CMS_TOPICS_REQUEST });
 };
 
 ReactDOM.render(
@@ -41,4 +43,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-module.hot.accept();
+//module.hot.accept();

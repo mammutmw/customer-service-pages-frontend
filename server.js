@@ -14,9 +14,10 @@ app.engine("html", require("ejs").renderFile);
 app.use(esiMiddleware());
 
 app.use(express.static(path.join(__dirname, "build")));
-app.use("/nl/nl", express.static(path.join(__dirname, "build")));
+app.use("/nl/nl", express.static(path.resolve(__dirname, "build")));
+//app.use("/nl/nl", express.static(path.join(__dirname, "build")));
 app.use(
-  "/nl/nl/customer-service/contact-us/get-support",
+  "/nl/nl/customer-service/support",
   express.static(path.join(__dirname, "build"))
 );
 

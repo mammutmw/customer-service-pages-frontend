@@ -1,7 +1,7 @@
 import { FETCH_CMS_TOPICS_SUCCCESS } from "../actions";
 
 // default state
-const initialState = [];
+const initialState = [{ isLoading: true }];
 // Reducer
 const topicsReducer = (state = initialState, { type, payload } = {}) => {
   switch (type) {

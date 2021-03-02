@@ -7,18 +7,33 @@ import { getPages } from "../../services/api";
 // action constants
 import {
   FETCH_CMS_TOPICS_REQUEST,
-  FETCH_CMS_TOPICS_SUCCCESS
+  FETCH_CMS_TOPICS_SUCCCESS,
+  LOADING_PAGES
 } from "../actions";
 
 // Saga
-export function* handleFetchCMSTopics({ payload }) {
+export function* handleFetchCMSTopics() {
   try {
-    const { data } = yield call(getPages, payload);
+    if (process.env.NODE_ENV !== "production") {
+      const { data } = yield call(getPages, {
+        market: "poc",
+        environment: "dev"
+      });
 
-    yield put({ type: FETCH_CMS_TOPICS_SUCCCESS, payload: data });
+      yield put({
+        type: FETCH_CMS_TOPICS_SUCCCESS,
+        payload: data
+      });
+      yield put({ type: LOADING_PAGES, payload: false });
+    } else {
+      console.log("USEING STATIC DATA......");
+      yield put({ type: LOADING_PAGES, payload: false });
+      yield put({ type: FETCH_CMS_TOPICS_SUCCCESS, payload: pagesData });
+    }
   } catch (error) {
     // TODO: Handle errors
     // again to get a new token
+    yield put({ type: LOADING_PAGES, payload: false });
     console.log("handleFetchCMSTopics::error", error);
   }
 }
