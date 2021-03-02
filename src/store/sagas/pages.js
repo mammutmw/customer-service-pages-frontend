@@ -4,6 +4,9 @@ import { call, put, takeEvery } from "redux-saga/effects";
 // Api
 import { getPages } from "../../services/api";
 
+// tempral data
+import pagesData from "../../services/mock/pages";
+
 // action constants
 import {
   FETCH_CMS_TOPICS_REQUEST,
@@ -14,6 +17,8 @@ import {
 // Saga
 export function* handleFetchCMSTopics() {
   try {
+    // Temporal untill api is deployed
+
     if (process.env.NODE_ENV !== "production") {
       const { data } = yield call(getPages, {
         market: "poc",
