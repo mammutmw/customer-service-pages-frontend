@@ -3,7 +3,7 @@ import Angry from "../../../public/assets/img/smiley_angry_gray.svg"
 import Annoyed from "../../../public/assets/img/smiley_annoyed_gray.svg"
 import Happy from "../../../public/assets/img/smiley_happy_gray.svg"
 import Neutral from "../../../public/assets/img/smiley_neutral_gray.svg"
-import VeryHappy from "../../../public/assets/img/smiley_Very_happy_gray.svg"
+import VeryHappy from "../../../public/assets/img/smiley_very_happy_gray.svg"
 
 
 //styles
