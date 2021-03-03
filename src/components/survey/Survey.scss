@@ -1,0 +1,30 @@
+.container {
+    img {
+        cursor: pointer;
+    }
+    img:active {
+        width: 27px;
+    }
+    &__images {
+        display: grid;
+        grid-template-columns: repeat(6, 28px);
+        gap: 20px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        &__angry:hover {
+            background: url("../../../public/assets/img/smiley_angry.svg") no-repeat;
+        }
+        &__annoyed:hover {
+            background: url("../../../public/assets/img/smiley_annoyed.svg") no-repeat; 
+        }
+        &__neutral:hover {
+            background: url("../../../public/assets/img/smiley_neutral.svg") no-repeat; 
+        }
+        &__happy:hover {
+            background: url("../../../public/assets/img/smiley_happy.svg") no-repeat; 
+        }
+        &__very-happy:hover {
+            background: url("../../../public/assets/img/smiley_very_happy.svg") no-repeat; 
+        }
+    }
+};
