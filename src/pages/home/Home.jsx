@@ -14,7 +14,7 @@ import { selectPages, selectLoadingPages } from "../../store/selectors";
 
 //styles
 import "./Home.scss";
-import Survey from "../../components/survey/survey";
+import Survey from "../../components/survey/Survey";
 
 const Home = () => {
   // Selectors
@@ -90,7 +90,7 @@ const Home = () => {
             <br />
             <br />
             <br />
-            <Survey />
+<Survey />
           </Fragment>
         )}
     </Layout>
