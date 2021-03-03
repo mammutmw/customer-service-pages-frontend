@@ -32,7 +32,7 @@ jobs:
       - run: yarn run build
         env:
           REACT_APP_CMS_DATA: "Replace this with the api url when deplyed"
-          SITE_FOLDER: nl/nl/customer-service/contact-us/get-support
+          SITE_FOLDER: nl/nl/customer-service/support
           IS_RELEASE: ${{github.ref == 'refs/heads/release'}}
 
       - name: List the files in your build, for debugging
