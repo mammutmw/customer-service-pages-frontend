@@ -5,13 +5,14 @@ import Layout from "../../components/layout/Layout";
 import BCrumb from "../../components/Bcrumb/BCrumb";
 import Headline from "../../components/headline/Headline";
 import ContactCard from "../../components/contactCard/ContactCard";
-import imgSVG from "../../../public/assets/img/rectangle.svg"
+import imgSVG from "../../../public/assets/img/rectangle.svg";
 
 import { selectRecomendedTopics } from "./../../store/selectors";
 import ContactCardExtra from "../../components/contactCardExtra/ContactCardExtra";
 
 const GetSupport = () => {
   const recomendedTopic = useSelector(selectRecomendedTopics);
+
   const fetchData = {
     recommended: "Recommended",
     chatTitle: "Chat with a Customer Service representative",
@@ -40,21 +41,21 @@ const GetSupport = () => {
 
       {recomendedTopic.contactMethods
         ? recomendedTopic.contactMethods.map((item, index) => (
-          <div key={item.id}>
-            <ContactCard
-              callUsTitle={item.headline}
-              callUsDescription={item.body}
-              contactType={item.type}
-              index={index}
-              callUsOpenToday={fetchData.callUsOpenToday}
-              callUsEstimatedTime={fetchData.chatEstimatedTime}
-              callUsNote={fetchData.callUsNote}
-              orderNumber={fetchData.orderNumber}
-              CallUsAvailable={fetchData.CallUsAvailable}
-              img={imgSVG}
-            />
-          </div>
-        ))
+            <div key={item.id}>
+              <ContactCard
+                callUsTitle={item.headline}
+                callUsDescription={item.body}
+                contactType={item.type}
+                index={index}
+                callUsOpenToday={fetchData.callUsOpenToday}
+                callUsEstimatedTime={fetchData.chatEstimatedTime}
+                callUsNote={fetchData.callUsNote}
+                orderNumber={fetchData.orderNumber}
+                CallUsAvailable={fetchData.CallUsAvailable}
+                img={imgSVG}
+              />
+            </div>
+          ))
         : ""}
     </Layout>
   );

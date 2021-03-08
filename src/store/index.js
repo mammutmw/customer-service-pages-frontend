@@ -1,5 +1,5 @@
 // Modules
-import { createBrowserHistory } from "history";
+import { createBrowserHistory, createMemoryHistory } from "history";
 import { createStore, applyMiddleware, combineReducers, compose } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import { routerMiddleware, connectRouter } from "connected-react-router";
@@ -12,7 +12,7 @@ import sagas from "./sagas";
 import reducers from "./reducer";
 
 // Setup
-const history = createBrowserHistory();
+const history = createMemoryHistory();
 const sagaMiddleware = createSagaMiddleware();
 
 // All reducer
