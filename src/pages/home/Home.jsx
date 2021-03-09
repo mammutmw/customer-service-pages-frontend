@@ -8,7 +8,6 @@ import Loading from "../../components/loading/Loading";
 import BCrumb from "../../components/Bcrumb/BCrumb";
 import Topic from "../../components/topic/Topic";
 import { ROUTE_GET_HELP } from "../../constants/routes";
-import Survey from "../../components/survey/Survey";
 
 // Selectors
 import { selectPages, selectLoadingPages } from "../../store/selectors";
@@ -91,7 +90,6 @@ const Home = () => {
           <br />
           <br />
           <br />
-          <Survey />
         </Fragment>
       )}
     </Layout>

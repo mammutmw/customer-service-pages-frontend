@@ -1,9 +1,9 @@
 // Modules
 import React from "react";
 import {
-  withRouter,
   HashRouter as Routers,
-  MemoryRouter
+  MemoryRouter,
+  withRouter
 } from "react-router-dom";
 import Router from "./routers/MainRouter";
 

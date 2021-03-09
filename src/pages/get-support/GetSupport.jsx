@@ -1,6 +1,7 @@
 // Modules
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Layout from "../../components/layout/Layout";
 import BCrumb from "../../components/Bcrumb/BCrumb";
 import Headline from "../../components/headline/Headline";
@@ -9,6 +10,8 @@ import imgSVG from "../../../public/assets/img/rectangle.svg";
 
 import { selectRecomendedTopics } from "./../../store/selectors";
 import ContactCardExtra from "../../components/contactCardExtra/ContactCardExtra";
+import { ROUTE_PLAYGROUND } from "../../constants/routes";
+
 
 const GetSupport = () => {
   const recomendedTopic = useSelector(selectRecomendedTopics);
@@ -57,6 +60,7 @@ const GetSupport = () => {
             </div>
           ))
         : ""}
+           <Link to={ROUTE_PLAYGROUND}>Survey</Link>
     </Layout>
   );
 };
