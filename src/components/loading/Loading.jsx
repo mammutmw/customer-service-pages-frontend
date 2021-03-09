@@ -1,10 +1,13 @@
 import React from "react";
+import CardSkeleton from "./CardSkeleton";
 
 function Loading({ children }) {
   return (
-    <div className="loading-indicator">
-      <h1>Loading...</h1>
-    </div>
+      <CardSkeleton
+        label="Loading..."
+        labelHeight="82vh"
+        bodyHeight="82vh"
+      />
   );
 }
 

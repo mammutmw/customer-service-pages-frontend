@@ -2228,6 +2228,15 @@
     classnames "^2.2.5"
     prop-types "^15.7.2"
 
+"@ingka/skeleton@^0.1.0":
+  version "0.1.0"
+  resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fskeleton/-/skeleton-0.1.0.tgz#2686b2f4dd7037ffb32377229126f12fdc106a98"
+  integrity sha512-guio0p6gE7/ZiU9k65hq/vwKLqQaTFYLZw25UNYRkEswUKyuFuX5A6hj+e1iEkTpp2AUEiPRe34CVyOPbKm0TQ==
+  dependencies:
+    "@ingka/variables" "^2.2.1"
+    classnames "^2.2.5"
+    prop-types "^15.7.2"
+
 "@ingka/ssr-icon@^2.5.1":
   version "2.5.1"
   resolved "https://npm.m2.blue.cdtapps.com/@ingka%2fssr-icon/-/ssr-icon-2.5.1.tgz#1f11cc0563a8df025a6dae4504f5507642986fb4"

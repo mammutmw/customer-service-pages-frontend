@@ -9,6 +9,8 @@
     "@ingka/button": "^4.0.6",
     "@ingka/choice": "^0.7.19",
     "@ingka/page-container": "^2.0.6",
+    "@ingka/skeleton": "^0.1.0",
+    "@ingka/variables": "^2.2.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
