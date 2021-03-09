@@ -1,3 +1,7 @@
+//not inside of app
+export const ROUTE_NL = "/nl/nl"
+export const ROUTE_CUSTOMER_SERVICE = "/nl/nl/customer-service"
+
 // Market route
 export const ROUTE_BASE = "/nl/nl/customer-service/support";
 

@@ -1,25 +1,17 @@
-import { ROUTE_BASE } from "../../constants/routes";
+import { ROUTE_BASE, ROUTE_CUSTOMER_SERVICE, ROUTE_NL } from "../../constants/routes";
 
-let initialState = [];
+let initialState = [
+    { url: ROUTE_NL, location: "Home" },
+    { url: ROUTE_CUSTOMER_SERVICE, location: "Customer service" },
+    { url: ROUTE_BASE, location: "Get support" }
+];
 
 const currentURLReducer = (state = initialState, { type, payload } = {}) => {
-    //We clone the state and use it throughout the reducer.
-    const clonedState = initialState.map(a => Object.assign({}, a));
     switch (type) {
         case "ADD":
-            clonedState.push(payload);
-            if (payload.url === ROUTE_BASE) {
-                return [...clonedState];
-            } else return [...state, ...clonedState];
-        case "REMOVE":
-            //We first need all the items in the state. In the clone, we push all items.
-            //That way we can splice and remove from last item to current position.
-            clonedState.push(...state);
-            //Always returns a negative number, that's why it removes starting from the last item up to the current position.
-            clonedState.splice(clonedState.length - payload);
-            return [...clonedState];
+            return [...state];
         default:
-            return state;
+            return [...state];
     }
 };
 export default currentURLReducer;
