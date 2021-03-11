@@ -8,6 +8,8 @@
     &__images {
         display: grid;
         grid-template-columns: repeat(6, 28px);
+        width: 28px;
+        height: auto;
         gap: 20px;
         margin-top: 10px;
         margin-bottom: 15px;
