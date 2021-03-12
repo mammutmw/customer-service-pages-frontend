@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_CURRENT_URL } from "../../store/actions/bcrumb";
 import Hyperlink from "@ingka/hyperlink";
-import { selectPathName } from "../../store/selectors/";
+import { selectPathName } from "../../store/selectors";
 import "./BCrumb.scss";
 
 //@ingka

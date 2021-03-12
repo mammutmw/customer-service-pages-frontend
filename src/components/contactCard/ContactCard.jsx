@@ -25,13 +25,10 @@ const ContactCard = ({
   selfServiceContent11,
   selfServiceContent12,
   selfServiceButton,
-  selfServiceID
+  buttonAvailable
 }) => {
   // Hooks
   const [showNumber, setShowNumber] = useState("Show phone number");
-
-  useEffect(() => {}, [selfServiceContent0]);
-
   return (
     <Fragment>
       <div className="card">
@@ -76,7 +73,7 @@ const ContactCard = ({
 
           <p className="card__estimated-time">{callUsEstimatedTime}</p>
           {/* Button for Desktop and Tablet */}
-          {index === 0 ? (
+          {index === 0 && buttonAvailable === false ? (
             <Button
               className="card__button-desktablet"
               type="primary"
@@ -112,7 +109,7 @@ const ContactCard = ({
             </Button>
           )}
           {/* Button for Mobile */}
-          {index === 0 ? (
+          {index === 0 && buttonAvailable === false ? (
             <Button className="card__button-mobile" type="primary">
               {/* Right now phone number 1-800-555-444 is DUMMY data */}
               {contactType === "telephone" ? (
@@ -136,7 +133,7 @@ const ContactCard = ({
             </Button>
           )}
           {/* Button for selfServiceOption */}
-          {typeof index !== "number" && selfServiceButton && (
+          {typeof index !== "number" && (
             <Button className="card__button-desktop" type="primary">
               {selfServiceButton}
             </Button>

@@ -1,4 +1,4 @@
-import { FETCH_AUTH_TOKEN_SUCCCESS } from "./../actions";
+import { FETCH_AUTH_TOKEN_SUCCCESS } from "../actions";
 
 // default state
 const initialState = {};
